@@ -11,7 +11,7 @@ public class PlayerMomentScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      germs = GameObject.FindGameObjectWithTag("germ")
+        germs = GameObject.FindGameObjectWithTag("germ");
     }
 
     // Update is called once per frame
@@ -19,5 +19,12 @@ public class PlayerMomentScript : MonoBehaviour
     {
         Vector2 mousePos = Input.mousePosition.normalized;
         transform.position = mousePos;
+    }
+    void OnCollisonEnter(Collision collision)
+    {
+      if(collison.GameObject.Tag == "germ" && Input.GetMouseDown == true)  
+      {
+         Debug.Log("Hit Detected");
+      }
     }
 }
